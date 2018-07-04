@@ -40,8 +40,6 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 	
 	public class GoogleTest {
-		//private static File results = new File("GuidemeResult.json");
-		//private static FileWriter jsonTest = null; 
 		public static void waitForLoad(RemoteWebDriver driver) {
 	        ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
 	            public Boolean apply(WebDriver driver) {
@@ -139,8 +137,6 @@ import java.util.*;
 	        String send = "//div[@class='T-I J-J5-Ji aoO T-I-atl L3']";
 
 			RemoteWebDriver driver = setBrowserDriver();
-
-         	//jsonTest = new FileWriter(results);
 			  
 			driver.get("https://google.com");
 			       
@@ -174,7 +170,6 @@ import java.util.*;
 		    elm.click();
 		    Thread.sleep(10000);
 			        
-			//jsonTest.close();
 			driver.quit();
 			     
 			 }
