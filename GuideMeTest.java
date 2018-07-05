@@ -70,6 +70,31 @@ public class GuideMeTest{
 			  }
 			  
 			Scanner scan = new Scanner(System.in);
+			scan.close();
+			
+	    			if(isMac) {
+	    				 System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+	    			}
+	    			else {
+	    			  System.setProperty("webdriver.chrome.driver", "C:/WebDrivers/chromedriver.exe"); //for windows jar find the chromedriver  
+	    			}
+	    			RemoteWebDriver driver = new ChromeDriver(options); 
+	    			System.out.println("here");
+	        		 return driver;
+	 }
+	
+	 public static RemoteWebDriver setBrowserDriver() {
+			System.out.println("Enter 1 for chrome,  2 for Edge, 3 for firefox, 4 for Safari");
+			boolean isMac = false;
+			  if(!System.getenv("PATH").contains("\\")) {
+				  isMac = true;
+				  System.out.println("This is a mac operating systems");
+			  }
+			  else {
+				  System.out.println("This is a windows operating systems");
+			  }
+			  
+			Scanner scan = new Scanner(System.in);
 			int browser = scan.nextInt();	
 			scan.close();
 			
@@ -81,7 +106,7 @@ public class GuideMeTest{
 	    			else {
 	    			  System.setProperty("webdriver.chrome.driver", "C:/WebDrivers/chromedriver.exe"); //for windows jar find the chromedriver  
 	    			}
-	    			RemoteWebDriver driver = new ChromeDriver(options); 
+	    			RemoteWebDriver driver = new ChromeDriver(); 
 	        		 return driver;
 	    	case 2:
 	    		if(isMac) {
